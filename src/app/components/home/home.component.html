@@ -1,0 +1,33 @@
+<section style="padding-top: 15rem;">
+  <div class="container">
+    <div class="row margin-title padding-footer">
+      <div class="col-12 col-md-5"><h4>Escribe tu nombre y unete al chat</h4>
+        <div class="barTitle"></div>
+        <p class="fixSizeText mt-2">Este chat fue desarrollo como parte de un Reto</p>
+        <p class="fixSizeText mt-2">Autor. <b>Leo Medina</b>  </p>
+      </div>
+      <div class="col-12 col-md-7">
+        <div id="contact-form" style="padding-left: 10px;padding-right: 10px;">
+          <form id="formContact" >
+            <div class="row">
+              <div class="col-12"><input class="form-control" id="name" type="text" placeholder="Nombre *"  [(ngModel)]="user.name"
+                                                       name="client_name" required="" pattern="([A-zÀ-ž]){3,}"></div>
+
+              <div class="col-12" >
+                <button class="btn btnCeleste" id="btnSubmit" type="submit"
+                        style="float: right;font-weight: bold;width: 60%; margin-left: 0; margin-right: 0; margin-top: 15px;"
+                        (click)="goChat()">Ingresar
+                </button>
+              </div>
+              <div class="progress" id="progressBar" style="visibility: hidden;display: none;">
+                <div class="progress-bar progress-bar-striped progress-bar-animated"
+                     style="width:100%;background-color: #888888;"></div>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+      <div class="col-md-2 d-none d-xl-block"></div>
+    </div>
+  </div>
+</section>
