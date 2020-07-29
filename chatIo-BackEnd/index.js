@@ -3,14 +3,16 @@
 const app = require('express')();
 const serverHttp = require('http').Server(app);
 const io = require('socket.io')(serverHttp);
+const cors = require('cors');
 let randomColor = require('randomcolor');
-var PORT =  1991;
+const router = require('./router');
 
 
 const myMessagges = [];
 let users = [];
 let connnections = [];
-
+app.use(cors())
+app.use(router);
 io.on('connection', (socket) => {
     console.log('New user connected');
     connnections.push(socket);
@@ -72,6 +74,5 @@ io.on('connection', (socket) => {
     })
 });
 
-serverHttp.listen(PORT, () => {
-    console.log('SERVER RUNNING ON PORT:', PORT)
-})
+
+serverHttp.listen(process.env.PORT || 5151, () => console.log(`Server has started.`));

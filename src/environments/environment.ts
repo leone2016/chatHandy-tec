@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  urlSocket: 'http://localhost:1991'
+  urlSocket: 'http://localhost:5151'
 };
 
 /*
